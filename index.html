@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>그린 펄스 Green Pulse</title>
+  <style>
+    /* 기본 설정 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: "Pretendard", "Noto Sans KR", sans-serif;
+      color: #1e1e1e;
+      background-color: #f9faf9;
+      line-height: 1.6;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      z-index: 1000;
+      transition: 0.3s;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      color: #2e8b57;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    header h1::before {
+      content: "🌿";
+    }
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    nav a:hover {
+      color: #2e8b57;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    section h2 {
+      font-size: 2.2rem;
+      color: #2e8b57;
+      margin-bottom: 20px;
+    }
+    section p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    /* 각 섹션 배경 구분 */
+    #intro {
+      background: linear-gradient(to bottom right, #eaf8ec, #f9fff9);
+    }
+    #activity {
+      background: #ffffff;
+    }
+    #campaign {
+      background: linear-gradient(to bottom right, #f0fef3, #ffffff);
+    }
+    #news {
+      background: #f9faf9;
+    }
+    #contact {
+      background: linear-gradient(to bottom right, #eaf8ec, #ffffff);
+    }
+
+    /* 버튼 스타일 */
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 28px;
+      background-color: #2e8b57;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #246c44;
+    }
+
+    /* 뉴스/스토리 카드 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+      width: 100%;
+      max-width: 1000px;
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      color: #2e8b57;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #2e8b57;
+      color: #fff;
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 10px 20px;
+      }
+      nav a {
+        margin: 10px;
+      }
+      section h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>그린 펄스</h1>
+    <nav>
+      <a href="#intro">소개</a>
+      <a href="#activity">핵심활동</a>
+      <a href="#campaign">캠페인참여</a>
+      <a href="#news">뉴스/스토리</a>
+      <a href="#contact">후원/문의</a>
+    </nav>
+  </header>
+
+  <section id="intro">
+    <h2>우리의 오늘이 지구의 내일을 바꾼다</h2>
+    <p>
+      그린 펄스(Green Pulse)는 청소년이 주도하는 도시 생태 복원 재단입니다.<br />
+      우리는 사라진 녹지를 되살리고, 사람과 자연이 함께 숨 쉬는 도시를 꿈꿉니다.<br />
+      작지만 지속적인 ‘생명의 맥박’을 도시 곳곳에 심어가고 있습니다.
+    </p>
+    <a href="#activity" class="btn">활동 보기</a>
+  </section>
+
+  <section id="activity">
+    <h2>도시 속 생태 복원 프로젝트</h2>
+    <p>
+      학교, 골목, 공원 등 작은 공간에서 생태 정원을 만들고 가꿉니다.<br />
+      학생, 주민, 그리고 지역 단체가 함께 참여하여 지속 가능한 도시 생태계를 만듭니다.<br />
+      도시의 회색 공간을 녹색 생명의 터전으로 바꾸는 것이 우리의 목표입니다.
+    </p>
+    <a href="#campaign" class="btn">참여하기</a>
+  </section>
+
+  <section id="campaign">
+    <h2>캠페인 참여</h2>
+    <p>
+      누구나 ‘그린 펄스’의 일원이 될 수 있습니다.<br />
+      식물 심기, 쓰레기 줄이기, 지역 환경 모니터링 등<br />
+      일상 속 작은 실천으로 지구의 맥박을 살려주세요.
+    </p>
+    <a href="#contact" class="btn">지금 참여하기</a>
+  </section>
+
+  <section id="news">
+    <h2>뉴스 / 스토리</h2>
+    <p>그린 펄스의 최근 활동과 참여자들의 이야기를 소개합니다.</p>
+    <div class="news-grid">
+      <div class="card">
+        <h3>🌱 학교 옥상 정원 완성</h3>
+        <p>학생들이 직접 만든 생태정원, 도시 한복판에 녹색 숨결을 더했습니다.</p>
+      </div>
+      <div class="card">
+        <h3>🌍 ‘플라스틱 프리 챌린지’ 시작</h3>
+        <p>일주일간 일회용품 줄이기 실천 인증 캠페인이 진행 중입니다.</p>
+      </div>
+      <div class="card">
+        <h3>💧 도심 빗물정원 시범 운영</h3>
+        <p>도시의 물순환 회복을 위한 첫걸음을 내딛었습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>후원 / 문의</h2>
+    <p>
+      함께하는 손길이 도시 생태를 바꿉니다.<br />
+      프로젝트 제안, 재정 후원, 협력 문의 등 언제든 연락주세요.<br /><br />
+      📧 이메일: greenpulse@school.org<br />
+      📍 위치: 충렬여자고등학교 1학년 1반
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 그린 펄스 (Green Pulse). 모든 권리 보유. <br />이 홈페이지의 지적 소유권은 충렬여고 1학년 1반에게 있습니다.</p>
+  </footer>
+
+  <script>
+    // 스크롤 시 헤더 작게 변하는 효과
+    window.addEventListener("scroll", () => {
+      const header = document.querySelector("header");
+      if (window.scrollY > 50) {
+        header.style.padding = "10px 40px";
+      } else {
+        header.style.padding = "15px 60px";
+      }
+    });
+  </script>
+</body>
+</html>
